@@ -164,7 +164,7 @@ Widget pictureIcon() {
 }
 
 Text nameApp() => Text(
-      'Save Money',
+      'My Account Book',
       style: TextStyle(fontSize: 28.0,),
       
     );

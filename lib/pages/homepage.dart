@@ -1,11 +1,11 @@
 import "package:flutter/material.dart";
 import 'package:savemoney2/pages/login.dart';
+
 import 'package:savemoney2/pages/logout.dart';
 
 import 'saveMoney.dart';
 import 'statement.dart';
 import 'total.dart';
-import 'logout.dart';
 
 
 class homepage extends StatefulWidget {
@@ -51,41 +51,41 @@ class _homepage extends State<homepage> {
           BottomNavigationBarItem(
             
             icon: Icon(
-              Icons.monetization_on ,
+              Icons.note_add ,
               color: _selectedIndex ==0 ? Color(0Xff679186): Colors.grey ,
             ),
             
-            title:Text("Save Money",
+            title:Text("Add Account",
             style: TextStyle (
               color: _selectedIndex ==0 ? Color(0Xff679186): Colors.grey ,
             ),),
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.view_headline,
+              Icons.featured_play_list,
               color: _selectedIndex ==1 ? Color(0Xff264e70): Colors.grey ,
             ),
             
-            title:Text("Statement",
+            title:Text("Account Book",
             style: TextStyle (
               color: _selectedIndex ==1 ? Color(0Xff264e70): Colors.grey ,
             ),),
             
           ),
-          BottomNavigationBarItem(
+          // BottomNavigationBarItem(
             
-            icon: Icon(
-              Icons.account_circle,
-              color: _selectedIndex ==2 ? Color(0Xff4e1b3c): Colors.grey ,
-            ),
-            title:Text("Me",
-            style: TextStyle (
-              color: _selectedIndex ==2 ? Color(0Xff4e1b3c): Colors.grey ,
+          //   icon: Icon(
+          //     Icons.account_circle,
+          //     color: _selectedIndex ==2 ? Color(0Xff4e1b3c): Colors.grey ,
+          //   ),
+          //   title:Text("Me",
+          //   style: TextStyle (
+          //     color: _selectedIndex ==2 ? Color(0Xff4e1b3c): Colors.grey ,
               
-            ),
-            ),
+          //   ),
+          //   ),
             
-          ),
+          // ),
           // BottomNavigationBarItem(
           //   icon: Icon(
           //     Icons.home,

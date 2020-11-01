@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
+import 'package:savemoney2/pages/login.dart';
 
 class statement extends StatefulWidget {
   @override
@@ -20,10 +21,24 @@ class _statementState extends State<statement> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Statement',
+          'Account Book ',
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Color(0Xff264e70),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.exit_to_app,
+              color: Color(0Xffffffff),
+            ),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return logIn();
+              }));
+//dosomething
+            },
+          )
+        ],
       ),
       body: StreamBuilder(
         stream: firestoreInstance.collection(firebaseUser.uid).snapshots(),
@@ -31,17 +46,13 @@ class _statementState extends State<statement> {
           return ListView.builder(
             itemCount: snapshot.data.documents.length,
             itemBuilder: (context, index) {
+              if (!snapshot.hasData) return const Text('Loading..');
               DocumentSnapshot course = snapshot.data.documents[index];
-              print(course['ยอดเงิน']);
-              var x = [course['ยอดเงิน']];
-              print(x);
-              print(course['ยอดเงิน'].runtimeType);
-              // var x = 0;
-              // x = x + int.parse(course['ยอดเิงน']);
-              // print(x);
-
               return ListTile(
-                subtitle: Text(course['ยอดเงิน'] + ' บาท'),
+                subtitle: Text('เลขบัญชี : '+ course['account']  +'\n'
+                + 'ธนาคาร : '+ course['bank'] + '\n'
+                + 'พร้อมเพย์ : '+ course['prompt']  ),
+                isThreeLine: true,
               );
             },
           );
@@ -49,4 +60,6 @@ class _statementState extends State<statement> {
       ),
     );
   }
+  
 }
+
