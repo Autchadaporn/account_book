@@ -72,20 +72,7 @@ class _homepage extends State<homepage> {
             ),),
             
           ),
-          // BottomNavigationBarItem(
-            
-          //   icon: Icon(
-          //     Icons.account_circle,
-          //     color: _selectedIndex ==2 ? Color(0Xff4e1b3c): Colors.grey ,
-          //   ),
-          //   title:Text("Me",
-          //   style: TextStyle (
-          //     color: _selectedIndex ==2 ? Color(0Xff4e1b3c): Colors.grey ,
-              
-          //   ),
-          //   ),
-            
-          // ),
+        
           // BottomNavigationBarItem(
           //   icon: Icon(
           //     Icons.home,
